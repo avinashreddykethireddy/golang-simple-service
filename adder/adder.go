@@ -6,11 +6,11 @@ func Add(x, y int) int {
 
 func CheckValues(x, y int) string {
 	sum := x + y
-	if sum < 10 {
-		return "less"
+	if sum > 10 {
+		return "more"
 	} else if sum == 0 {
 		return "zero"
 	} else {
-		return "more"
+		return "less"
 	}
 }
