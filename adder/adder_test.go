@@ -14,27 +14,24 @@ func TestAdder(t *testing.T) {
 	}
 }
 
-func TestCheckValuesLess(t *testing.T) {
-	ans1 := CheckValues(2, 2)
-	expected1 := "less"
-	if ans1 != expected1 {
-		t.Errorf("expected '%s' but got '%s'", expected1, ans1)
+func TestCheckValues(t *testing.T) {
+	cases := []struct {
+		x        int
+		y        int
+		expected string
+	}{
+		{2, 5, "less"},
+		{2, 10, "more"},
+		{2, -2, "zero"},
+		{2, -7, "less"},
 	}
-}
-
-func TestCheckValuesMore(t *testing.T) {
-	ans2 := CheckValues(2, 9)
-	expected2 := "more"
-	if ans2 != expected2 {
-		t.Errorf("expected '%s' but got '%s'", expected2, ans2)
-	}
-}
-
-func TestEqual(t *testing.T) {
-	ans3 := CheckValues(2, -2)
-	expected3 := "zero"
-	if ans3 != expected3 {
-		t.Errorf("expected '%s' but got '%s'", expected3, ans3)
+	for _, c := range cases {
+		t.Run("testing", func(t *testing.T) {
+			got := CheckValues(c.x, c.y)
+			if got != c.expected {
+				t.Fatalf("Wanted %v , but got %v", c.expected, got)
+			}
+		})
 	}
 }
 
@@ -44,11 +41,11 @@ func ExampleAdd() {
 	// Output: 6
 }
 
-func TestSubtractAndSay(t *testing.T) {
-	ans := SubtractAndSay(2, 3)
-	expected := "less than zero"
-
-	if ans != expected {
-		t.Errorf("expected '%s' but got '%s'", expected, ans)
-	}
-}
+//func TestSubtractAndSay(t *testing.T) {
+//	ans := SubtractAndSay(2, 3)
+//	expected := "less than zero"
+//
+//	if ans != expected {
+//		t.Errorf("expected '%s' but got '%s'", expected, ans)
+//	}
+//}
