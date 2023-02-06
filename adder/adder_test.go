@@ -14,16 +14,17 @@ func TestAdder(t *testing.T) {
 	}
 }
 
-func TestCheckValues(t *testing.T) {
+func TestCheckValuesLess(t *testing.T) {
 	ans1 := CheckValues(2, 2)
 	expected1 := "less"
-	ans2 := CheckValues(2, 9)
-	expected2 := "more"
-
 	if ans1 != expected1 {
 		t.Errorf("expected '%s' but got '%s'", expected1, ans1)
 	}
+}
 
+func TestCheckValuesMore(t *testing.T) {
+	ans2 := CheckValues(2, 9)
+	expected2 := "more"
 	if ans2 != expected2 {
 		t.Errorf("expected '%s' but got '%s'", expected2, ans2)
 	}
