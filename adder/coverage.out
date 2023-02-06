@@ -1,7 +1,0 @@
-mode: set
-POCs/covarage-tests-sample-repo/adder/adder.go:3.24,5.2 1 1
-POCs/covarage-tests-sample-repo/adder/adder.go:7.35,9.14 2 1
-POCs/covarage-tests-sample-repo/adder/adder.go:9.14,11.3 1 1
-POCs/covarage-tests-sample-repo/adder/adder.go:11.8,11.21 1 0
-POCs/covarage-tests-sample-repo/adder/adder.go:11.21,13.3 1 0
-POCs/covarage-tests-sample-repo/adder/adder.go:13.8,15.3 1 0
