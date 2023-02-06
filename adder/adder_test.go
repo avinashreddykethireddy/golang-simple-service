@@ -43,3 +43,12 @@ func ExampleAdd() {
 	fmt.Println(sum)
 	// Output: 6
 }
+
+func TestSubtractAndSay(t *testing.T) {
+	ans := SubtractAndSay(2, 3)
+	expected := "less than zero"
+
+	if ans != expected {
+		t.Errorf("expected '%s' but got '%s'", expected, ans)
+	}
+}
