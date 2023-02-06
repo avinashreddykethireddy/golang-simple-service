@@ -30,6 +30,14 @@ func TestCheckValuesMore(t *testing.T) {
 	}
 }
 
+func TestEqual(t *testing.T) {
+	ans3 := CheckValues(2, -2)
+	expected3 := "zero"
+	if ans3 != expected3 {
+		t.Errorf("expected '%s' but got '%s'", expected3, ans3)
+	}
+}
+
 func ExampleAdd() {
 	sum := Add(1, 5)
 	fmt.Println(sum)
